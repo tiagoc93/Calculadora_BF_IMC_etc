@@ -14,8 +14,8 @@ layout = [
     [sg.Input()],
     [sg.Text('Digite sua idade:')],
     [sg.Input()],
-    [sg.Text('Digite seu sexo:')],
-    [sg.Input()],
+    [sg.Text('Sexo:')],
+    [sg.Combo(['Masculino', 'Feminino'])],
     [sg.Text('Escolha o nivel de sua atividade física semanal.')],
     [sg.Combo(['Sedentário', '1 a 3 dias/semana', '3 a 5 dias/semana', '6 a 7 dias/semana', '2x ao dia(treinos pesados)'])],
     [sg.OK()]
@@ -28,16 +28,16 @@ def iniciar():
         if event == sg.WIN_CLOSED:
             break
         sg.Popup(f' Seu nome é: {values[0]}\n Sua altura é: {values[1]} m\n Seu peso é: {values[2]} kg\n Você tem: {values[3]} anos\n Você é do sexo: {values[4]}')
+
     # A função a cima manda um popup identificando o usuario.
-        if values[4] == 'Masculino' or values[4] == 'masculino':
+
+        if values[4] == 'Masculino':
             values[4] = 1
-        elif values[4] == 'Feminino' or values[4] == 'feminino':
+        elif values[4] == 'Feminino':
             values[4] = 0
-        else:
-            sg.popup('Insira Masculino ou Feminino')
-            break
 
     # A função a cima manda um popup na aba de sexo se o usuario não colocar uma opção válida e fecha o programa, alem disso aceita com iniciais maiusculas ou minusculas
+
         if values[5] == 'Sedentário':
             values[5] = 1.2
         elif values[5] == '1 a 3 dias/semana':
@@ -80,26 +80,26 @@ def iniciar():
         tmb_M = 655 + (9.6 * peso) + (1.8 * (altura * 100)) - (4.7 * idade)
     # Sexo masculino e suas atividades
         if sexo == 1 and atividade == 1.2:
-            sg.popup(f' {values[0]} sua Taxa de Metabolismo Basal é de: {tmb_H} e sua NDC é de {tmb_H * 1.2:.2f} Kcal/dia')
+            sg.popup(f' {values[0]} sua Taxa de Metabolismo Basal é de: {tmb_H}\n Sua NDC é de {tmb_H * 1.2:.2f} Kcal/dia\n Para ganhar peso você precisará ingerir: {(tmb_H * 1.2) + 400:.2f} Kcal/dia\n Para perder peso você precisará ingerir:{(tmb_H * 1.2) - 400.00:.2f} Kcal/dia')
         elif sexo == 1 and atividade == 1.375:
-            sg.popup(f' {values[0]} sua Taxa de Metabolismo Basal é de: {tmb_H} e sua NDC é de {tmb_H * 1.375:.2f} Kcal/dia')
+            sg.popup(f' {values[0]} sua Taxa de Metabolismo Basal é de: {tmb_H}\n Sua NDC é de {tmb_H * 1.375:.2f} Kcal/dia\n Para ganhar peso você precisará ingerir: {(tmb_H * 1.375) + 400:.2f} Kcal/dia\n Para perder peso você precisará ingerir:{(tmb_H * 1.375) - 400.00:.2f} Kcal/dia')
         elif sexo == 1 and atividade == 1.55:
-            sg.popup(f' {values[0]} sua Taxa de Metabolismo Basal é de: {tmb_H} e sua NDC é de {tmb_H * 1.55:.2f} Kcal/dia')
+            sg.popup(f' {values[0]} sua Taxa de Metabolismo Basal é de: {tmb_H}\n Sua NDC é de {tmb_H * 1.55:.2f} Kcal/dia\n Para ganhar peso você precisará ingerir: {(tmb_H * 1.55) + 400:.2f} Kcal/dia\n Para perder peso você precisará ingerir:{(tmb_H * 1.55) - 400.00:.2f} Kcal/dia')
         elif sexo == 1 and atividade == 1.725:
-            sg.popup(f' {values[0]} sua Taxa de Metabolismo Basal é de: {tmb_H} e sua NDC é de {tmb_H * 1.725:.2f} Kcal/dia')
+            sg.popup(f' {values[0]} sua Taxa de Metabolismo Basal é de: {tmb_H}\n Sua NDC é de {tmb_H * 1.725:.2f} Kcal/dia\n Para ganhar peso você precisará ingerir: {(tmb_H * 1.725) + 400:.2f} Kcal/dia\n Para perder peso você precisará ingerir:{(tmb_H * 1.725) - 400.00:.2f} Kcal/dia')
         elif sexo == 1 and atividade == 1.9:
-            sg.popup(f' {values[0]} sua Taxa de Metabolismo Basal é de: {tmb_H} e sua NDC é de {tmb_H * 1.9:.2f} Kcal/dia')
+            sg.popup(f' {values[0]} sua Taxa de Metabolismo Basal é de: {tmb_H}\n Sua NDC é de {tmb_H * 1.9:.2f} Kcal/dia\n Para ganhar peso você precisará ingerir: {(tmb_H * 1.9) + 400:.2f} Kcal/dia\n Para perder peso você precisará ingerir:{(tmb_H * 1.9) - 400.00:.2f} Kcal/dia')
     # Sexo feminino e suas respectivas atividades físicas
         if sexo == 0 and atividade == 1.2:
-            sg.popup(f' {values[0]} sua Taxa de Metabolismo Basal é de: {tmb_M} e sua NDC é de {tmb_H * 1.2:.2f} Kcal/dia')
+            sg.popup(f' {values[0]} sua Taxa de Metabolismo Basal é de: {tmb_M}\n Sua NDC é de {tmb_H * 1.2:.2f} Kcal/dia\n Para ganhar peso você precisará ingerir: {(tmb_H * 1.2) + 400:.2f} Kcal/dia\n Para perder peso você precisará ingerir:{(tmb_H * 1.2) - 400.00:.2f} Kcal/dia')
         elif sexo == 0 and atividade == 1.375:
-            sg.popup(f' {values[0]} sua Taxa de Metabolismo Basal é de: {tmb_M} e sua NDC é de {tmb_H * 1.375:.2f} Kcal/dia')
+            sg.popup(f' {values[0]} sua Taxa de Metabolismo Basal é de: {tmb_M}\n Sua NDC é de {tmb_H * 1.375:.2f} Kcal/dia\n Para ganhar peso você precisará ingerir: {(tmb_H * 1.375) + 400:.2f} Kcal/dia\n Para perder peso você precisará ingerir:{(tmb_H * 1.375) - 400.00:.2f} Kcal/dia')
         elif sexo == 0 and atividade == 1.55:
-            sg.popup(f' {values[0]} sua Taxa de Metabolismo Basal é de: {tmb_M} e sua NDC é de {tmb_H * 1.55:.2f} Kcal/dia')
+            sg.popup(f' {values[0]} sua Taxa de Metabolismo Basal é de: {tmb_M}\n Sua NDC é de {tmb_H * 1.55:.2f} Kcal/dia\n Para ganhar peso você precisará ingerir: {(tmb_H * 1.55) + 400:.2f} Kcal/dia\n Para perder peso você precisará ingerir:{(tmb_H * 1.55) - 400.00:.2f} Kcal/dia')
         elif sexo == 0 and atividade == 1.725:
-            sg.popup(f' {values[0]} sua Taxa de Metabolismo Basal é de: {tmb_M} e sua NDC é de {tmb_H * 1.725:.2f} Kcal/dia')
+            sg.popup(f' {values[0]} sua Taxa de Metabolismo Basal é de: {tmb_M}\n Sua NDC é de {tmb_H * 1.725:.2f} Kcal/dia\n Para ganhar peso você precisará ingerir: {(tmb_H * 1.725) + 400:.2f} Kcal/dia\n Para perder peso você precisará ingerir:{(tmb_H * 1.725) - 400.00:.2f} Kcal/dia')
         elif sexo == 0 and atividade == 1.9:
-            sg.popup(f' {values[0]} sua Taxa de Metabolismo Basal é de: {tmb_M} e sua NDC é de {tmb_H * 1.9:.2f} Kcal/dia')
+            sg.popup(f' {values[0]} sua Taxa de Metabolismo Basal é de: {tmb_M}\n Sua NDC é de {tmb_H * 1.9:.2f} Kcal/dia\n Para ganhar peso você precisará ingerir: {(tmb_H * 1.9) + 400:.2f} Kcal/dia\n Para perder peso você precisará ingerir:{(tmb_H * 1.9) - 400.00:.2f} Kcal/dia')
 
     # Variavel de IMC e risco de obesidade
 
