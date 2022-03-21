@@ -11,14 +11,22 @@ the code is not so clean, but it is working.
 ## Updates
 
 ☑️ Body Fat Calculator
+
 ☑️ Body Fat Calculator with Pollock method
+
 ☑️ IMC Calculator
+
 ☑️ TMB Calculator
 
 
 🔨 Decide between matplotlib and openpyxl.
+
 🔨 Store results from calculations (BF, IMC, TMB)
+
 🔨 Store Patient Measurements in Excel Worksheets (Body Perimeters)
+
 🔨 Send Worksheet to email (User and Patient)
+
 🔨 Compare previous and current Worksheet, using analytic charts.
+
 🔨 Show everything on screen.
