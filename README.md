@@ -8,7 +8,7 @@ the code is not so clean, but it is working.
   - I hope to be able to optmize the app over time.
 
 
-## Updates
+## Updates ↗️ 40%
 
 ☑️ Body Fat Calculator
 
