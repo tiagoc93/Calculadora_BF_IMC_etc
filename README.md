@@ -31,4 +31,4 @@ the code is not so clean, but it is working.
 
 🔨 Show everything on screen.
 
-🔨 Web Version. This gona be awesome!
+🔨 Web Version - Django Framework. This gona be awesome!
