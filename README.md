@@ -30,3 +30,5 @@ the code is not so clean, but it is working.
 🔨 Compare previous and current Worksheet, using analytic charts.
 
 🔨 Show everything on screen.
+
+🔨 Web Version. This gona be awesome!
