@@ -32,3 +32,5 @@ the code is not so clean, but it is working.
 🔨 Show everything on screen.
 
 🔨 Web Version - Django Framework. This gona be awesome!
+
+🔨 Change PySimpleGui to other gui to improve the security
